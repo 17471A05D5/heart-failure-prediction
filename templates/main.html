@@ -1,0 +1,134 @@
+
+
+
+<!-- This is GUI for Heart failure Prediction Application Using Machine Learning Classifer -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML API</title>
+
+  <style>
+    /* CSS code for button */
+    body {
+      background-color:white;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+.bc{
+font-color:white;
+font-family: "Times New Roman", Times, serif;
+}
+.heading {
+  background-color: #A52260;
+  border: solid 1px #A52260;
+  height: 200px;
+}
+.about{
+  border: solid 1px #A52260;
+}
+.login{
+ border: solid 1px #A52260;
+}
+.logop {
+  width: 40%;
+  vertical-align: middle;
+  float: left;
+  height: 100%;
+}
+
+.myTitle {
+  display: flex;
+  color: white;
+  font-size: 50px;
+  font-style: italic;
+  padding-left: 3%;
+ padding-top:1%;
+  font-family: "Times New Roman", Times, serif;
+}
+
+  </style>
+
+</head>
+
+<body>
+
+
+  
+   <header>
+    <article class="heading">
+      <img class="logop" src="static/real-heart-icon-png-.png" alt="logo">
+      <h1 class="myTitle">Patient Survaival Prediction</h1>
+      <p>  Cardiovascular diseases (CVDs) are the number 1 cause of death globally, taking an estimated 17.9 
+million lives each year. CVDs are a group of disorders of the heart and blood vessels and include coronary 
+heart disease, cerebrovascular disease, rheumatic heart disease and other conditions</p>
+    </article>
+  
+  </header>
+<div>
+
+ <div class="login">
+	
+    <!-- Get input for predict -->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+        <h1>Enter the values </h1>
+        
+    	<input type="text" name="age" placeholder="age,1,100" required="required" />
+        <input type="text" name="sex" placeholder="sex" required="required" />
+        <input type="text" name="anaemia" placeholder="anemia" required="required" />
+		<input type="text" name="creatinine" placeholder="creatinine (mcg/L),1,7861" required="required" />
+		<br>
+    	<input type="text" name="dia" placeholder="dia" required="required" />
+        <input type="text" name="eject" placeholder="eject ,1,100" required="required" />
+		<input type="text" name="hbp" placeholder="hbp" required="required" />
+    	<input type="text" name="plates" placeholder="plates  (kiloplatelets/mL),0.0,100000.0" required="required" /><br>
+        <input type="text" name="serum_c" placeholder="serum_c (mg/dL),0.0,100.0" required="required" />
+		<input type="text" name="serum_s" placeholder="serum_s (mEq/L),1,1000" required="required" />
+		
+    	<input type="text" name="smoke" placeholder="smoke" required="required" />
+        <input type="text" name="time" placeholder="time (follow-up-period), 1,1000" required="required" /><br>
+		
+        <br>
+        
+        <!-- Show button -->
+        
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict</strong></button></a>
+        
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h1>{{ prediction_text }}</h1>
+       </center>
+   </div>
+
+ </div>
+</div>
+
+</body>
+</html>

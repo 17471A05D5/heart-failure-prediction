@@ -27,7 +27,7 @@ def predict():
     output = model.predict(df)
         
     if output == 0:
-        res_val = " not Die "
+        res_val = "Die "
     else:
         res_val = " not Die"
         

@@ -36,5 +36,5 @@ x_test= st_x.transform(x_test)
 RF=RandomForestClassifier()
 RF.fit(x_train,y_train)
 
-pickle.dump(RF, open('model1.pkl','wb'))
-model = pickle.load(open('model1.pkl','rb'))
+pickle.dump(RF, open('model.pkl','wb'))
+model = pickle.load(open('model.pkl','rb'))

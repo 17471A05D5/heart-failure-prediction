@@ -10,7 +10,7 @@ from flask import Flask, request, render_template
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('model2.pkl', 'rb'))
+model = pickle.load(open('model\model.pkl', 'rb'))
 
 @app.route('/')
 def home():
